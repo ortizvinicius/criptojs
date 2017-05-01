@@ -1,4 +1,3 @@
-var winston = require('winston');
 
 exports.criptify = function (nChave, nTexto){
 	
@@ -68,14 +67,10 @@ exports.criptify = function (nChave, nTexto){
 		
 		fTextoString = fTextoString.replace(new RegExp(",", "g"), "")
 		
-		winston.log("info", "CriptoJS -> criptify() -> Ok");
-		
 		return fTextoString;
 
 	} catch (ex) {
-		winston.log("error", "CriptoJS -> criptify() -> Error below");
-		winston.log("info", ex);
-		return "err";
+		return ex;
 	}
 			
 };
@@ -135,15 +130,11 @@ exports.decriptify = function (nChave, nTexto){
 			.replace(new RegExp("お", "g"), "")
 			.replace(new RegExp("あ", "g"), ",")
 			.replace(new RegExp("ぎ", "g"), " ");
-		
-		console.log("CriptoJS -> decriptify -> Ok");
-		
+	
 		return fTextoString;
 
 	} catch (ex) {
-		winston.log("error", "CriptoJS -> decriptify -> Errow below:");
-		winston.log("info", ex);
-		return "err";
+		return ex;
 	}
 			
 };
@@ -165,5 +156,3 @@ function find_duplicates(arr) {
     } 
     return out; 
 }
-
-winston.log("info", "CriptoJS -> started");
