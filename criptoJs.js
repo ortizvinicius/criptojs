@@ -1,4 +1,4 @@
-//testando commit
+//testando commit 2
 exports.criptify = function (nChave, nTexto){
 	
 	try {		
